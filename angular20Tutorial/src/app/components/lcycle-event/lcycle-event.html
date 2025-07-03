@@ -1,0 +1,45 @@
+<p>life-cycle-event works!</p>
+
+<div class="row">
+    <div class="col-3">
+        firstName => {{firstName}}
+        <br>
+        Uppercase => {{firstName | uppercase}}
+    </div>
+    <div class="col-3">
+        courseName => {{courseName}}
+        <br>
+        Lowercase => {{courseName | lowercase}}
+    </div>
+    <div class="col-3">
+        nayaSaal => {{nayaSaal}}
+        <br>
+        Titlecase => {{nayaSaal | titlecase}}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        rollNoList => {{rollNoList}}
+        <br>
+        Slice => {{rollNoList | slice:2:5}}
+        <br>
+        Slice => {{rollNoList | slice:2}}
+    </div>
+    <div class="col-3">
+        studList => {{studList}}
+        <br>
+        Jsonpipe => {{studList | json}}
+    </div>
+    <div class="col-3">
+        Currentdate => {{currentDate}}
+        <br>
+        OnlyDate => {{currentDate| date}}
+        <br>
+        formatDate => {{currentDate| date : 'dd-MM-yyyy'}}
+        <br>
+        formatDate => {{currentDate| date : 'dd-MMM-yy'}}
+        <br>
+        formatDate => {{currentDate| date : 'dd-MMMM-yyyy'}}
+    </div>
+</div>

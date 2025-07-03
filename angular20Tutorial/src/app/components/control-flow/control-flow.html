@@ -1,0 +1,90 @@
+<p>control-flow works!</p>
+
+<table>
+    <tr>
+        <td>
+            @if(isParaVisible == true){
+                <span>Sample of If-Else</span>
+                <p>This is sample para</p>
+            }@else {
+                <small>Small bro</small>
+                <h3>isParaVisible has false value</h3>
+            }
+        </td>
+        <td>
+            <button class="btn btn-success" (click)="showPara()">Show p</button>
+        </td>
+        <td>
+            <button (click)="hidePara()">Hide p</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @if(monthName == 'jan'){
+                <span>January</span>
+            } @else if (monthName == 'feb') {
+                <span>February</span>
+            } @else if (monthName == 'mar') {
+                <span>March</span>
+            } @else if (monthName == 'apr') {
+                <span>April</span>
+            } @else {
+                <span>November!</span>
+            }
+        </td>
+        <td>
+            <input type="text" [(ngModel)] = "monthName">
+        </td>
+        <td>
+            <select (change)="selectMonth()">
+                <option value="janu">jan</option>
+                <option value="febu">feb</option>
+                <option value="maru">mar</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <ul>
+                @for (city of cityList; track $index) {
+                    <li>{{city}}</li>
+                }
+            </ul>
+        </td>
+        <td>
+            <select name="" id="">
+                @for (item of cityList; track $index) {
+                    <option value="">{{item}}</option>
+                }
+            </select>
+        </td>
+    </tr>
+</table><br>
+
+<table>
+    <thead>
+        <tr>
+            <th>Sr no</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of studentList; track $index) {
+            <tr>
+                <td>{{$index+1}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.city}}</td>
+                <td>
+                    @if(item.isActive == true){
+                        <span>Active</span>
+                    }
+                    @else{
+                        <span>Dis-Active</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

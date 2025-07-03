@@ -1,0 +1,112 @@
+<!-- <p class="primaryColor">user works!</p> -->
+
+<!-- <input type="text" placeholder="Name"/> -->
+
+<!-- <span>{{courseName}}</span>    error -->
+<!-- ------------------------------------------------------>
+
+<div class="row">
+    <div class="col-7">
+        <div class="card">
+            <div class="card-header bg-success">
+                User List
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>Email ID</th>
+                            <th>Password</th>
+                            <th>Full Name</th>
+                            <th>Mobile No</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (item of userList; track $index) {
+                            <tr>
+                                <td>{{item.userId}}</td>
+                                <td>{{item.emailId}}</td>
+                                <td>{{item.password}}</td>
+                                <td>{{item.fullName}}</td>
+                                <td>{{item.mobileNo}}</td>
+                                <td>
+                                    <button class="btn btn-primary btn-sm" (click)="onEditUser(item)">Edit</button>
+                                    <button class="btn btn-danger btn-sm" (click)="onDeleteUser(item.userId)">Delete</button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-5">
+        <div class="card">
+            <div class="card-header bg-success">
+                New User Form
+            </div>
+            <div class="card-body">
+                <form #formValue="ngForm">     
+                <div class="row">
+                    <div class="col-6">
+                        <label for="">Email</label>
+                        <input type="text" #email="ngModel" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" required [(ngModel)]="userObj.emailId" name="emailId" class="form-control">
+                        @if(email.touched) {
+                            <div class="text-danger">
+                                @if(email.errors?.['required']){
+                                    <span>This is Required</span>
+                                }
+                                @if(email.errors?.['pattern']){
+                                    <span>Email is incorrect</span>
+                                }
+                            </div>
+                        }
+                    </div>
+
+                    <div class="col-6">
+                        <label for="">Password</label>
+                        <input type="text" #pwd="ngModel" required minlength="4" [(ngModel)]="userObj.password" name="password" class="form-control">
+                        <div class="text-danger">
+                            @if(pwd.errors?.['required']){
+                                <span>This is Required</span>
+                            }
+                            @if(pwd.errors?.['minlength']){
+                                <span>min 4 characters required</span>
+                            }
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <label for="">Full Name</label>
+                        <input type="text" [(ngModel)]="userObj.fullName" name="fullName" class="form-control">
+                        <!-- <div class="text-danger">
+                            <span>This is Required</span>
+                        </div> -->
+                    </div>
+                    <div class="col-6">
+                        <label for="">Mobile No</label>
+                        <input type="text" [(ngModel)]="userObj.mobileNo" name="mobileNo" class="form-control">
+                        <!-- <div class="text-danger">
+                            <span>This is Required</span>
+                        </div> -->
+                    </div>
+                </div>
+                </form>
+                <div class="row pt-3">
+                    <div class="col-6 text-center">
+                        <button class="btn btn-secondary" (click)="onResetUser()">Reset</button>
+                    </div>
+                    <div class="col-6 text-center">
+                        formValue => {{formValue.invalid}}
+                        @if(userObj.userId == 0){
+                            <button class="btn btn-success" [disabled]="formValue.invalid" (click)="onSaveUser()">Save</button>
+                        } @else {
+                            <button class="btn btn-warning" (click)="onUpdateUser()">Update</button>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

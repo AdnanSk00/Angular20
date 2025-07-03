@@ -1,0 +1,64 @@
+This is Angular 20 - started on 22nd June 2025
+
+Here we will write everything related to Angular and its installation process...
+
+Step1  : download node modules - https://nodejs.org/en
+Step2  : check nodeModule - in cmd > node -v
+Step3  : check package manager - in cmd > npm -v
+Step4  : download vs code - https://code.visualstudio.com
+Step5  : download Angular20 version - in cmd > npm install -g @angular/cli
+         CLI(Command Line Interface)
+Step6  : Create a folder on desktop - G:\Angular20
+Step7  : open 'Angualr20' folder in cmd & check specification - G:\angular20>ng v
+Step8  : Then create new project of angular in cmd - G:\angular20>ng new Angular20Tutorial
+step9  : Give the answer of question - N, CSS, SSR-N
+step10 : We can check our project in file explorer G:\Angular20\angular20Tutorial
+step11 : open angular20Tutorial folder in vs code
+step12 : Now, how can we run our project? By using command and shortcut cmd 'ng serve' or 'ng s'
+         open new terminal as folder location and run PS G:\Angular20\angular20Tutorial>ng serve
+step12 : Now we will make one component folder name 'components' in G:\Angular20\angular20Tutorial\src\app>components
+step13 : Now we will make every component in our 'components' folder
+         we wil open components folder in terminal and run cmd and shortcut cmd
+         G:\Angular20\angular20Tutorial\src\app\components>ng generate component user or ng g c user
+
+
+Syllabus :-
+
+lec1  - installation
+
+lec2  - Components
+
+lec3  - Data Binding
+
+lec4  - Signal
+
+lec5  - Control Flow Statements
+
+lec6  - Routing
+
+lec7  - Directive
+
+lec8  - Component Life Cycle everything & Pipes | Default Pipes
+
+lec9  - GET API
+
+lec10 - POST API
+
+lec11 - PUT & DELETE API
+
+lec12 - Reactive Form | CRUD with API
+
+lec13 - Form Validations | Template & Reactive
+
+lec14 - Pipe - How to make our custom pipe ?
+        Now we will make one pipe folder name 'pipes' in G:\Angular20\angular20Tutorial\src\app>pipes
+        Now we wil make every pipe in our 'pipes' folder
+        we wil open pipes folder in terminal and run cmd and shortcut cmd
+        PS G:\Angular20\angular20Tutorial\src\app\pipes>ng generate pipe na or ng g p na
+
+lec15 - Service - How to create service?
+        Now we will make one service folder name 'services' in G:\Angular20\angular20Tutorial\src\app>services
+        Now we will make every service in our 'services' folder
+        we wil open services folder in terminal and run cmd and shortcut cmd
+        PS G:\Angular20\angular20Tutorial\src\app\components>ng generate service master or ng g s master
+lec16 - Resource - ResourceAPI & rxResourceAPI

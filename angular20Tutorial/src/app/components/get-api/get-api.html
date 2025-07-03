@@ -1,0 +1,55 @@
+<p>get-api works!</p>
+
+<div class="row">
+    <div class="col-4 table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Website</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (item of userList; track $index) {
+                    <tr>
+                        <td>{{item.name}}</td>
+                        <td>{{item.website}}</td>
+                        <td>{{item.username}}</td>
+                        <td>{{item.email}}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-4 table-responsive">
+        <ul>
+            @for (item of todoList; track $index) {
+                <li type="1">{{item.title}}</li>
+            }
+        </ul>
+    </div>
+    <div class="col-4 table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>uerName</th>
+                    <th>emailId</th>
+                    <th>fullName</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (item of busUserList; track $index) {
+                    <tr>
+                        <td>{{item.userName}}</td>
+                        <td>{{item.emailId}}</td>
+                        <td>{{item.fullName}}</td>
+                        <td>{{item.role}}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

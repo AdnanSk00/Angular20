@@ -1,0 +1,35 @@
+<p>pipe-ex works!</p><hr>
+
+<div class="row">
+    <div class="col-3">
+        <p>{{courseName}}</p>
+        <p>after upperCase => {{courseName | uppercase}}</p>
+        <p>after lowerCase => {{courseDuration | lowercase}}</p>
+        <p>after titleCase => {{courseDuration | titlecase}}</p>
+    </div>
+    <div class="col-4">
+        <p>{{currentDate}}</p>
+        <p>{{currentDate | date}}</p>
+        <p>{{currentDate | date : 'dd-MM-'}}</p>
+        <p>{{currentDate | date : 'dd-MM-yy'}}</p>
+        <p>{{currentDate | date : 'dd-MM-yyyy'}}</p>
+        <p>{{currentDate | date : 'dd/MMM/yy'}}</p>
+        <p>{{currentDate | date : 'dd/MMMM/yyyy'}}</p>
+    </div>
+    <div class="col-3">
+        <p>{{rollNoList}}</p>
+        <p>after slice => {{rollNoList | slice:1:5}}</p>
+        <p>after slice => {{rollNoList | slice:3}}</p>
+    </div>
+</div><hr>
+<div class="row">
+    <div class="col-3">
+        <p>{{studObj}}</p>
+        <p>after jsonPipe => {{studObj | json}}</p>
+    </div>
+    <div class="col-4">
+        name: {{studObj.name | na}} <br>
+        email: {{studObj.email | na}} <br>
+        state: {{studObj.address.state | na}}
+    </div>
+</div>

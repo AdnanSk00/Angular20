@@ -1,0 +1,99 @@
+<p>reactive-user works!</p>
+
+<div class="row">
+    <div class="col-7">
+        <div class="card">
+            <div class="card-header bg-success">
+                User List
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>Email ID</th>
+                            <th>Password</th>
+                            <th>Full Name</th>
+                            <th>Mobile No</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (item of userList; track $index) {
+                            <tr>
+                                <td>{{item.userId}}</td>
+                                <td>{{item.emailId}}</td>
+                                <td>{{item.password}}</td>
+                                <td>{{item.fullName}}</td>
+                                <td>{{item.mobileNo}}</td>
+                                <td>
+                                    <button class="btn btn-primary btn-sm" >Edit</button>
+                                    <button class="btn btn-danger btn-sm" >Delete</button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-5">
+        <div class="card">
+            <div class="card-header bg-success">
+                New User Form
+            </div>
+            <div class="card-body">
+                <form [formGroup]="userForm">
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="">Email</label>
+                            <input type="text" formControlName="emailId" class="form-control">
+                            @if(userForm.controls['emailId'].touched) {
+                                <div class="text-danger">
+                                    @if(userForm.controls['emailId'].errors?.['required']){
+                                        <span>This is Required</span>
+                                    }
+                                    @if(userForm.controls['emailId'].errors?.['minlength']){
+                                        <span>min 5 characters needed</span><br>
+                                    }
+                                    @if (userForm.controls['emailId'].errors?.['email']){
+                                        <span>Email is incorrect</span>
+                                    }
+                                </div>
+                            }
+                        </div>
+                        <div class="col-6">
+                            <label for="">Password</label>
+                            <input type="text" formControlName="password" class="form-control">
+                            @if(userForm.controls['password'].touched) {
+                                <div class="text-danger">
+                                    @if(userForm.controls['password'].errors?.['required']){
+                                        <span>This is Required</span>
+                                    }
+                                </div>
+                            }
+                        </div>
+                        <div class="col-6">
+                            <label for="">Full Name</label>
+                            <input type="text" formControlName="fullName" class="form-control">
+                        </div>
+                        <div class="col-6">
+                            <label for="">Mobile No</label>
+                            <input type="text" formControlName="mobileNo" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="col-6 text-center">
+                            <button class="btn btn-secondary" >Reset</button>
+                        </div>
+                        <div class="col-6 text-center">
+                                <button class="btn btn-success" [disabled]="userForm.invalid" (click)="onSaveUser()">Save</button>
+                                <button class="btn btn-warning" >Update</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

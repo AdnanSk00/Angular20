@@ -1,0 +1,49 @@
+<!-- <p>data-binding works!</p> -->
+
+<table style="width: 100%;">
+    <tr>
+        <td>
+            {{courseName}}      <!--Interpolation-->
+        </td>
+        <td>
+            {{productPrice}}
+        </td>
+        <td>
+            <span>{{courseName}}</span>
+        </td>
+        <!-- <td>
+            {{fullName}}  error
+        </td> -->
+    </tr>
+    <tr>
+        <td>
+            <input type="text" value="{{courseName}}">
+        </td>
+        <td>
+            <input [type]="inputType" [max]="maxLength" [minLength]="minChar" >        <!--Property/Data Binding-->
+        </td>
+        <td>
+            <p [class]="myClassName">Hello, how are you Adnan?</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button (click)="showWelcomeMessage()">Show Message</button>
+        </td>
+        <td>
+            <button (click)="changeCourseName()">Change Course</button>
+        </td>
+        <td>
+            <select (change)="onCityChange()">
+                <option value="">Pune</option>
+                <option value="">Mumbai</option>
+                <option value="">Nasik</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" [(ngModel)]="courseName">
+        </td>
+    </tr>
+</table>
