@@ -1,0 +1,27 @@
+<!-- <p>login works!</p> -->
+
+<body>
+    <div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh">
+        <div class="col-md-5 login-box">
+            <h2 class="text-center login-title">Login</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email or Username</label>
+                    <input type="text" [(ngModel)]="loginObj.userName" name="username" class="form-control" id="email" placeholder="Email" required/>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" [(ngModel)]="loginObj.password" name="password" class="form-control" id="password" placeholder="Password" required/>
+                </div>
+                <!-- <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="remember"/>
+                    <label class="form-check-label" for="remember">Remember me</label>
+                </div> -->
+                <button type="button" class="btn btn-primary w-100" (click)="onLogin()">Login</button>
+                <!-- <p class="text-center mt-3 mb-0">
+                    <a href="#">Forgot password?</a>
+                </p> -->
+            </form>
+        </div>
+    </div>
+</body>

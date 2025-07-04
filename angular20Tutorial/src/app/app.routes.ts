@@ -11,6 +11,7 @@ import { User } from './components/user/user';
 import { ReactiveUser } from './components/reactive-user/reactive-user';
 import { PipeEx } from './components/pipe-ex/pipe-ex';
 import { ResourceAPI } from './components/resource-api/resource-api';
+import { Login } from './components/login/login';
 
 export const routes: Routes = [
     {
@@ -60,5 +61,9 @@ export const routes: Routes = [
     {
         path : 'resource-api',
         component : ResourceAPI
+    },
+    {
+        path : 'login',
+        component : Login
     }
 ];
