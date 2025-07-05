@@ -12,58 +12,71 @@ import { ReactiveUser } from './components/reactive-user/reactive-user';
 import { PipeEx } from './components/pipe-ex/pipe-ex';
 import { ResourceAPI } from './components/resource-api/resource-api';
 import { Login } from './components/login/login';
+import { Layout } from './components/layout/layout';
 
 export const routes: Routes = [
     {
-        path : 'admin',
-        component : Admin
-    }, 
-    {
-        path : 'bolt',
-        component : Bolt
-    },
-    {
-        path : 'databinding',
-        component : DataBinding
-    },
-    {
-        path : 'signal',
-        component : SignalEx
-    },
-    {
-        path : 'controlflow',
-        component : ControlFlow
-    },
-    {
-        path : 'att-directive',
-        component : AttDirective
-    },
-    {
-        path : 'life-cycle-event',
-        component : LCycleEvent
-    },
-    {
-        path : 'get-api',
-        component :  GetAPI
-    },
-    {
-        path : 'users',
-        component : User
-    },
-    {
-        path : 'reactive-user',
-        component : ReactiveUser
-    },
-    {
-        path : 'pipe',
-        component : PipeEx
-    },
-    {
-        path : 'resource-api',
-        component : ResourceAPI
+        path : '',
+        redirectTo : 'login',
+        pathMatch : 'full'
     },
     {
         path : 'login',
         component : Login
+    },
+    {
+        path : '',
+        component : Layout,
+        children : [
+            {
+                path : 'admin',
+                component : Admin
+            }, 
+            {
+                path : 'bolt',
+                component : Bolt
+            },
+            {
+                path : 'databinding',
+                component : DataBinding
+            },
+            {
+                path : 'signal',
+                component : SignalEx
+            },
+            {
+                path : 'controlflow',
+                component : ControlFlow
+            },
+            {
+                path : 'att-directive',
+                component : AttDirective
+            },
+            {
+                path : 'life-cycle-event',
+                component : LCycleEvent
+            },
+            {
+                path : 'get-api',
+                component :  GetAPI
+            },
+            {
+                path : 'users',
+                component : User
+            },
+            {
+                path : 'reactive-user',
+                component : ReactiveUser
+            },
+            {
+                path : 'pipe',
+                component : PipeEx
+            },
+            {
+                path : 'resource-api',
+                component : ResourceAPI
+            }
+        ]
     }
+    
 ];

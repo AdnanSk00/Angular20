@@ -1,0 +1,36 @@
+<!-- <p>layout works!</p> -->
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="javascript:void(0)">Logo</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item" style="margin-top: 3px;">
+          <a class="nav-link active" routerLink="admin">Admin</a>
+        </li>
+        <li class="nav-item" style="margin-top: 3px;">
+          <a class="nav-link" routerLink="signal">Signal</a>
+        </li>
+        <li class="nav-item" style="margin-top: 3px;">
+          <a class="nav-link" routerLink="controlflow">control flow</a>
+        </li>
+        <li class="nav-item" style="margin-top: 3px;">
+          <a class="nav-link" routerLink="user">user</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        @if(loggedUserName == ''){
+          <button class="btn btn-primary" routerLink="login" type="button">Login</button>
+        } @else {
+          <button class="btn btn-warning" type="button">{{loggedUserName}}</button>
+          <button class="btn btn-primary" type="button" (click)="onLogout()">Logout</button>
+        }
+      </form>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

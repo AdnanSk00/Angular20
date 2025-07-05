@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,5 +21,7 @@ export class Master {
     debugger;
     return this.http.get("https://api.freeprojectapi.com/api/GoalTracker/getAllUsers")
   }
+
+  onLogin : Subject<boolean> = new Subject<boolean>();
 
 }

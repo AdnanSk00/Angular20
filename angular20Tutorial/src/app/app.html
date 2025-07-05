@@ -404,7 +404,7 @@
   </div>
 </nav> -->
 
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+<!-- <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="javascript:void(0)">Logo</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
@@ -426,9 +426,17 @@
         </li>
       </ul>
       <form class="d-flex">
-        <button class="btn btn-primary" routerLink="login" type="button">Login</button>
+        @if(loggedUserName == ''){
+          <button class="btn btn-primary" routerLink="login" type="button">Login</button>
+        } @else {
+          <button class="btn btn-warning" type="button">{{loggedUserName}}</button>
+          <button class="btn btn-primary" type="button" (click)="onLogout()">Logout</button>
+        }
       </form>
     </div>
   </div>
-</nav>
+</nav> -->
+
+
+
 <router-outlet></router-outlet>
